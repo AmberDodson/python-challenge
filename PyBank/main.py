@@ -1,12 +1,9 @@
 import os
 import csv
 
-csvpath = os.path('budget_data.csv')
-
+csvpath = os.path.join('budget_data.csv')
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-
-# Objective 3: Create the lists to store data. 
 
 profit = []
 monthly_changes = []
@@ -57,7 +54,7 @@ with open(csvpath) as csvfile:
       increase_date = date[monthly_changes.index(greatest_increase_profits)]
       decrease_date = date[monthly_changes.index(greatest_decrease_profits)]
       
-
+    
     print("Financial Analysis")
     
     print("Total Months: " + str(count))
@@ -65,7 +62,7 @@ with open(csvpath) as csvfile:
     print("Average Change: " + "$" + str(int(average_change_profits)))
     print("Greatest Increase in Profits: " + str(increase_date) + " ($" + str(greatest_increase_profits) + ")")
     print("Greatest Decrease in Profits: " + str(decrease_date) + " ($" + str(greatest_decrease_profits)+ ")")
-    print("----------------------------------------------------------")
+
 
 with open('financial_analysis.txt', 'w') as text:
     
@@ -76,4 +73,7 @@ with open('financial_analysis.txt', 'w') as text:
     text.write("    Average Change: " + '$' + str(int(average_change_profits)) + "\n")
     text.write("    Greatest Increase in Profits: " + str(increase_date) + " ($" + str(greatest_increase_profits) + ")\n")
     text.write("    Greatest Decrease in Profits: " + str(decrease_date) + " ($" + str(greatest_decrease_profits) + ")\n")
- 
+    
+
+
+
